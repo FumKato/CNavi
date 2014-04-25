@@ -19,3 +19,15 @@
 #student_list {
 	display: none;
 }
+
+.red {
+	color: #FF0000;
+}
+
+.blue {
+	color: #0000FF;
+}
+
+.green {
+	color: #00FF00;
+}

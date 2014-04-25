@@ -1,3 +1,3 @@
 Classes = new Meteor.Collection('classed');
-Students = new Meteor.Collection('students');
+Users = new Meteor.Collection('users');
 Lessons = new Meteor.Collection('lessons');

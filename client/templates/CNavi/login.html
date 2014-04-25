@@ -1,3 +1,19 @@
 <template name="login">
-	<h1>login</h1>
+	<form name="LoginForm">
+		<div class="loginFormContents">
+			<div class="loginFormContentsName">ID</div>
+			<input type="text" class="loginFormTextarea" name="id"/>
+		</div>
+		
+		<div class="loginFormContents">
+			<div class="loginFormContentsName">password</div>
+			<input type="password" class="loginFormTextarea" name="password"/>
+		</div>
+		
+		<div class="loginFormButtons">
+			<div class="loginFormPadding"></div>
+			<input type="button" class="loginFormButton" name="login" value="Login"/>
+			<div class="loginFormPadding"></div>
+		</div>
+	</form>
 </template>
