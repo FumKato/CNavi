@@ -3,11 +3,14 @@
 </head>
 
 <body>
-  {{> cnavi}}
+  <div id="cNavi">{{> cnavi}}</div>
 </body>
 
 <template name="cnavi">
-	<div id="header">header</div>
+	<div id="header">
+		<div id="logo">logo</div>
+		<div id="headerName"></div>
+	</div>
 	<div class="cnavi_contents" id="login">{{> login}}</div>
 	<div class="cnavi_contents" id="class_list">{{> class_list}}</div>
 	<div class="cnavi_contents" id="lesson_list">{{> lesson_list}}</div>
