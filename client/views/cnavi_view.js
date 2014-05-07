@@ -17,7 +17,7 @@ CNaviView = function(){
 				$('#header').addClass('blue');
 				break;
 		}
-		$('#headerName').html('Welcome back ' + user.name);
+		$('#headerName').html('Welcome back ' + user.name + '(' + user.role + ')');
 	};
 };
 

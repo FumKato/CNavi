@@ -4,11 +4,14 @@ $(function() {
 		var password = $('input[name=password]').val();
 		
 		Meteor.subscribe('user', id, password, function(){
-			if(Users.find({}).count() != 0) {
-				var user = Users.findOne({});
-				//class_list_view.render();
-				cnavi_view.render_header(user);
-				cnavi_view.render('class_list');
+			var user = users_model.get_my_users();
+			if(user != null) {
+				Meteor.subscribe('classes', user.class_ids, function(){
+					var classes = classes_model.get_classes();
+					class_list_view.render(classes);
+					cnavi_view.render_header(user);
+					cnavi_view.render('classList');		
+				});
 			} else {
 				alert('Invalid ID or password');
 			}

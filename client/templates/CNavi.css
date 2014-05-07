@@ -9,21 +9,32 @@
 }
 
 #logo{
-	width: 200px;
-	height: 40px;
-	float: left;
-}
-
-#headerName{
-	width: 496px;
+	width: 197px;
 	height: 38px;
-	float: left;
-	margin-left: 2px;
 	
 	border: 1px solid #000;
 	-webkit-border-radius: 7px;
     -moz-border-radius: 7px;
     border-radius: 7px;
+    
+    text-align: center;
+    font-weight: bold;
+    font-size: 25px;
+	float: left;
+}
+
+#headerName{
+	width: 498px;
+	height: 38px;
+	float: left;
+	margin-left: 1px;
+	
+	border: 1px solid #000;
+	-webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+    
+    font-size: 20px;
 }
 
 #login{
@@ -37,7 +48,10 @@
     border-radius: 7px;
 }
 
-#class_list {
+#classList {
+	width: 700px;
+	float: left;
+	margin-top: 30px;
 	display: none;
 }
 
@@ -45,26 +59,29 @@
 	display: none;
 }
 
-#lesson_list {
+#lessonList {
 	display: none;
 }
 
-#paper_submission {
+#paperSubmission {
 	display: none;
 }
 
-#student_list {
+#studentList {
 	display: none;
 }
 
 .red {
+	background-color: #FFDDDD;
 	color: #FF0000;
 }
 
 .blue {
+	background-color: #DDDDFF;
 	color: #0000FF;
 }
 
 .green {
+	background-color: #EEFFEE;
 	color: #00FF00;
 }
