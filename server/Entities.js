@@ -1,5 +1,5 @@
 // name, day, period, semester
-Classes = new Meteor.Collection('classed');
+Classes = new Meteor.Collection('classes');
 
 //id(not _id), name, password, role, classes
 Users = new Meteor.Collection('users');

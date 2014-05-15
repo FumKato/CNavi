@@ -1,23 +1,34 @@
+Template.cnavi.render_header = function(){
+	return cnavi_view.render_header(Session.get('myself'));
+};
+
 CNaviView = function(){
-	this.render = function(target){
+	var _this = CNaviView;
+	
+	_this.prototype.render = function(target){
 		$('.cnavi_contents').hide();
 		var targetID = '#' + target;
 		$(targetID).show();
 	};
 	
-	this.render_header = function(user){
+	_this.prototype.render_header = function(user){
+		if(user == null) {
+			return '<div id="header"><div id="logo">CNavi</div><div id="headerName"></div></div>';
+		}
+		var class_name = '';
 		switch(user.role){
 			case 'student':
-				$('#header').addClass('green');
+				class_name = 'green';
 				break;
 			case 'teacher':
-				$('#header').addClass('red');
+				class_name = 'blue';
 				break;
 			case 'assistant':
-				$('#header').addClass('blue');
+				class_name = 'red';
 				break;
 		}
-		$('#headerName').html('Welcome back ' + user.name + '(' + user.role + ')');
+		return '<div id="header" class="' + class_name + '"><div id="logo">CNavi</div><div id="headerName">Welcome back <b>' + 
+			user.name + '</b></div></div>';
 	};
 };
 
