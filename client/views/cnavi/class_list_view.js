@@ -1,12 +1,20 @@
+Template.class_list.helpers({
+	get_classes: function(){
+		return classes_model.get_classes();
+	},
+	
+	render_class_list_item: function(class_list_item){
+		return class_list_view.render(class_list_item);
+	}
+});
+
 ClassListView = function(){
-	this.render = function(classes){
-		var i = 0;
-		for(i; i<classes.length; i++){
-			var list_item = '<tr class="classListTableItem"><td>' + classes[i].name + '</td><td>' +
-					classes[i].day + '</td><td>' + classes[i].period + '</td><td>' +
-					classes[i].semester + '</td></tr>';
-			$('#classListTable').append(list_item);
-		}
+	var _this = ClassListView;
+	
+	_this.prototype.render = function(class_list_item){
+		return '<tr class="classListTableItem"><td>' + class_list_item.name + '</td><td>' +
+				class_list_item.day + '</td><td>' + class_list_item.period + '</td><td>' +
+				class_list_item.semester + '</td></tr>';
 	};
 };
 

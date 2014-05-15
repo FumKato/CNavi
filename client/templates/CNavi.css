@@ -60,6 +60,9 @@
 }
 
 #lessonList {
+	width: 700px;
+	float: left;
+	margin-top: 30px;
 	display: none;
 }
 

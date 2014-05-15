@@ -6,4 +6,8 @@ $(function(){
 	$(document).on('mouseleave', '.classListTableItem', function(){
 		$(this).removeClass('blue');
 	});
+	
+	$(document).on('click', '.classListTableItem', function(){
+		//TODO
+	});
 });

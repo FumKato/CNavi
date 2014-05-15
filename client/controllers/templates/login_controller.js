@@ -8,8 +8,6 @@ $(function() {
 			if(user != null) {
 				Session.set('myself', user);
 				Meteor.subscribe('classes', user.class_ids, function(){
-					var classes = classes_model.get_classes();
-					class_list_view.render(classes);
 					cnavi_view.render('classList');		
 				});
 			} else {
