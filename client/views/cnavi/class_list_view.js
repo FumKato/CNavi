@@ -12,7 +12,7 @@ ClassListView = function(){
 	var _this = ClassListView;
 	
 	_this.prototype.render = function(class_list_item){
-		return '<tr class="classListTableItem"><td>' + class_list_item.name + '</td><td>' +
+		return '<tr id="' + class_list_item._id + '" class="classListTableItem"><td>' + class_list_item.name + '</td><td>' +
 				class_list_item.day + '</td><td>' + class_list_item.period + '</td><td>' +
 				class_list_item.semester + '</td></tr>';
 	};

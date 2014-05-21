@@ -8,6 +8,9 @@ $(function(){
 	});
 	
 	$(document).on('click', '.classListTableItem', function(){
-		//TODO
+		Session.set('class_id', $(this).attr('id'));
+		Meteor.subscribe('lessons', Session.get('class_id'), function(){
+			cnavi_view.render('lessonList');
+		});
 	});
 });

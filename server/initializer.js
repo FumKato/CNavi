@@ -50,6 +50,19 @@ Meteor.startup(function(){
 			period: classPeriod,
 			semester: classSemester
 		});
+		var j = 1;
+		var max = Math.floor(Math.random() * 30) + 1;
+		for(j; j< max; j++){
+			var monthLimit = Math.floor(Math.random() * 12) + 1;
+			var dateLimit = Math.floor(Math.random() * 30) + 1;
+			Lessons.insert({
+				class_id: id,
+				number: j,
+				name: 'lesson' + j,
+				month: monthLimit,
+				date: dateLimit
+			});
+		}
 		switch(Math.floor(Math.random() * 4)){
 			case 1:
 				class_ids_a1.unshift(id);
