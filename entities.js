@@ -7,5 +7,7 @@ Users = new Meteor.Collection('users');
 //class_id, name, type
 Lessons = new Meteor.Collection('lessons');
 
+Questions = new Meteor.Collection('questions');
+
 //lesson_id, student_id, type, content
 Submissions = new Meteor.Collection('submissions');

@@ -66,11 +66,17 @@
 	display: none;
 }
 
-#paperSubmission {
+#submission {
+	width: 700px;
+	float: left;
+	margin-top: 30px;
 	display: none;
 }
 
 #studentList {
+	width: 700px;
+	float: left;
+	margin-top: 30px;
 	display: none;
 }
 
