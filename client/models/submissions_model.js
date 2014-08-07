@@ -13,6 +13,10 @@ SubmissionsModel = function(){
 			user_id: user_id
 		});
 	};
+	
+	_this.prototype.set_answers = function(lesson_id, user_id, answers){
+		Meteor.call('set_answers', lesson_id, user_id, answers);
+	};
 };
 
 submissions_model = new SubmissionsModel();

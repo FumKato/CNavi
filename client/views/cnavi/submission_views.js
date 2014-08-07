@@ -21,7 +21,7 @@ SubmissionView = function(){
 				'<div class="submittedAnswer">A. ' + submissions.answers[num] + '</div>';
 			return answers;
 		}
-		return '<div class="questionAnswerForm"> <input type="text" name=" + ' + question + '"/></div>';
+		return '<div class="questionAnswerForm"> <input type="text" class="questionAnswerTextForm" name=" + ' + question + '"/></div>';
 	};
 };
 

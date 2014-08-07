@@ -15,6 +15,10 @@ $(function(){
 	});
 	
 	$('.submissionButton').click(function(){
-		
+		var answers = new Array();
+		$('.questionAnswerTextForm').each(function(){
+			answers.push($(this).val());
+		});
+		submissions_model.set_answers(Session.get('lesson_id'), Session.get('myself').id, answers);
 	});
 });
