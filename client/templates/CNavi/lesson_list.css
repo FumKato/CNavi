@@ -1,3 +1,10 @@
+#lessonListButtons{
+	width: 690px;
+	height: 100px;
+	margin-top: 30px;
+	float: left;
+}
+
 .className {
 	width: 690px;
 	height: 50px;
