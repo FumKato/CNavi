@@ -14,11 +14,15 @@ $(function(){
 		}
 	});
 	
-	$('.submissionButton').click(function(){
-		var answers = new Array();
-		$('.questionAnswerTextForm').each(function(){
-			answers.push($(this).val());
-		});
-		submissions_model.set_answers(Session.get('lesson_id'), Session.get('myself').id, answers);
+	$(document).on('click', '.submissionButton', function(){
+		if(Session.get('myself').role == 'student'){
+			var answers = new Array();
+			$('.questionAnswerTextForm').each(function(){
+				answers.push($(this).val());
+			});
+			submissions_model.set_answers(Session.get('lesson_id'), Session.get('myself').id, answers);
+			alert('Submision is completed');
+			cnavi_view.render('lessonList');
+		}
 	});
 });

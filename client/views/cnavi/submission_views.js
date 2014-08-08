@@ -40,5 +40,10 @@ Template.submission.helpers({
 	
 	render_answer: function(num, question){
 		return submission_view.render_answer(num, question);
+	},
+	
+	is_student: function(){
+		if(Session.get('myself') == null) return false;
+		return Session.get('myself').role == 'student';
 	}
 });

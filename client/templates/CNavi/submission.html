@@ -8,6 +8,8 @@
 	{{/each}}
 	<div id="submissionButtons">
 		<input type="button" class="backButton" value="Back" />
-		<input type="button" class="submissionButton" value="Submit" />
+		{{#if is_student}}
+			<input type="button" class="submissionButton" value="Submit" />
+		{{/if}}
 	</div>
 </template>

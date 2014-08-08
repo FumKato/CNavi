@@ -11,6 +11,11 @@ Template.lesson_list.helpers({
 	
 	get_lesson_list_item_class: function(lesson){
 		return lesson_list_view.get_lesson_list_item_class(lesson);
+	},
+	
+	is_teacher: function(){
+		if(Session.get('myself') == null) return false;
+		return Session.get('myself').role == 'teacher';
 	}
 });
 

@@ -48,3 +48,9 @@
 	height: 50px;
 	float: left;
 }
+
+.createButton{
+	width: 100px;
+	float: left;
+	margin-left: 50px;
+}

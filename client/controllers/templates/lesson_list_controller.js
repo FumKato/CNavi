@@ -15,6 +15,11 @@ LessonListController = function(){
 			}
 		}
 	};
+	
+	_this.prototype.create_button_clicked = function(){
+		if(Session.get('myself').role != 'teacher') return;
+		cnavi_view.render('lessonCreation');
+	};
 };
 
 lesson_list_controller = new LessonListController();
@@ -37,5 +42,9 @@ $(function(){
 	
 	$('#lessonListButtons').find('.backButton').click(function(){
 		cnavi_view.render('classList');
+	});
+	
+	$(document).on('click', '.createButton', function(){
+		lesson_list_controller.create_button_clicked();
 	});
 });
