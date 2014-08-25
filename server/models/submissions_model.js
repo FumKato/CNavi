@@ -16,6 +16,7 @@ SubmissionsModel = function(){
 				user_name: user_name,
 				lesson_id: lesson_id,
 				answers: answers,
+				scores: null,
 				date: submission_date
 			});
 		} else {
@@ -28,6 +29,17 @@ SubmissionsModel = function(){
 				}}
 			);
 		}
+	};
+	
+	_this.prototype.set_scores = function(user_id, user_name, lesson_id, scores){
+		Submissions.update({
+					user_id: user_id,
+					lesson_id: lesson_id
+				},
+				{$set: {
+					scores: scores
+				}}
+		);
 	};
 	
 	_this.prototype.get_submissions_by_lesson_id = function(user, lesson_id){

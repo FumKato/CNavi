@@ -19,6 +19,7 @@ SubmissionView = function(){
 			if(questions == null || submissions == null) return;
 			var answers = '<div class="questionListAnswer">TA. ' + questions[0].answers[num] + '</div>' +
 				'<div class="submittedAnswer">A. ' + submissions.answers[num] + '</div>';
+			answers += '<div class="markFormBox">score:<input type="text" class="markForm" name="markForm" /></div>';
 			return answers;
 		}
 		return '<div class="questionAnswerForm"> <input type="text" class="questionAnswerTextForm" name=" + ' + question + '"/></div>';
@@ -45,5 +46,10 @@ Template.submission.helpers({
 	is_student: function(){
 		if(Session.get('myself') == null) return false;
 		return Session.get('myself').role == 'student';
+	},
+	
+	is_markable: function(){
+		if(Session.get('myself') == null) return false;
+		return Session.get('myself').role == 'teacher' || Session.get('myself').role == 'assistant';
 	}
 });

@@ -25,4 +25,16 @@ $(function(){
 			cnavi_view.render('lessonList');
 		}
 	});
+	
+	$(document).on('click', '.registrationButton', function(){
+		if(Session.get('myself').role == 'teacher' || Session.get('myself').role == 'assistant'){
+			var scores = new Array();
+			$('.markForm').each(function(){
+				scores.push($(this).val());
+			});
+			submissions_model.set_scores(Session.get('lesson_id'), Session.get('myself').id, scores);
+			alert('Score is registered');
+			cnavi_view.render('lessonList');
+		}
+	});
 });
