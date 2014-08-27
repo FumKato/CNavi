@@ -14,8 +14,12 @@ Template.lesson_list.helpers({
 	},
 	
 	is_teacher: function(){
-		if(Session.get('myself') == null) return false;
+		
 		return Session.get('myself').role == 'teacher';
+	},
+	
+	render_button: function(){
+		return lesson_list_view.render_button();
 	}
 });
 
@@ -29,6 +33,14 @@ LessonListView = function(){
 			className += "overed";
 		}
 		return className;
+	};
+	
+	_this.prototype.render_button = function(){
+		if(Session.get('myself') == null) return '';
+		if(Session.get('myself').role == 'teacher'){
+			return '<input type="button" class="createButton" value="Create" />';
+		}
+		return '';
 	};
 };
 

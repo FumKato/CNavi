@@ -24,6 +24,16 @@ SubmissionView = function(){
 		}
 		return '<div class="questionAnswerForm"> <input type="text" class="questionAnswerTextForm" name=" + ' + question + '"/></div>';
 	};
+	
+	_this.prototype.render_button = function(){
+		if(Session.get('myself') == null) return '';
+		if(Session.get('myself').role == 'stundent'){
+			return '<input type="button" class="submissionButton" value="Submit" />';
+		} else if(Session.get('myself').role == 'teacher' || Session.get('myself').role == 'assistant'){
+			return '<input type="button" class="registrationButton" value="Register" />';
+		}
+		return '';
+	};
 };
 
 submission_view = new SubmissionView();
@@ -43,13 +53,7 @@ Template.submission.helpers({
 		return submission_view.render_answer(num, question);
 	},
 	
-	is_student: function(){
-		if(Session.get('myself') == null) return false;
-		return Session.get('myself').role == 'student';
-	},
-	
-	is_markable: function(){
-		if(Session.get('myself') == null) return false;
-		return Session.get('myself').role == 'teacher' || Session.get('myself').role == 'assistant';
+	render_button: function(){
+		return submission_view.render_button();
 	}
 });

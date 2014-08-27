@@ -9,8 +9,6 @@
 	{{/each}}
 	<div id="lessonListButtons">
 		<input type="button" class="backButton" value="Back" />
-		{{#if is_teacher}}
-			<input type="button" class="createButton" value="Create" />
-		{{/if}}
+		{{{render_button}}}
 	</div>
 </template>
